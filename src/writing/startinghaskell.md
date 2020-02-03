@@ -2,7 +2,6 @@
 tags: post
 title: What does Haskell teach me about Javascript?
 layout: layouts/base.njk
-date: 01/06/2015
 ---
 
 I was away in North Uist during the summer and due to the wonderful lack of connectivity I decided to get on with learning all about Haskell. Having been using a functional style for a while now I wanted to get right into the guts and have a poke around. I saw Monoids and Monads lurking on the horizon but starting out easy is always the best bet.
