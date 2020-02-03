@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env ELEVENTY_ENV=dev eleventy --serve",
-    "build": "cross-env ELEVENTY_ENV=prod eleventy",
+    "build": "cross-env ELEVENTY_ENV=prod eleventy"
   },
   "repository": {
     "type": "git",
@@ -19,9 +19,10 @@
     "autoprefixer": "^9.6.0",
     "axios": "^0.19.0",
     "dotenv": "^8.0.0",
+    "luxon": "^1.22.0",
     "postcss": "^7.0.17",
     "postcss-color-mix": "^1.1.0",
-    "postcss-comment": "^2.0.0",
+    "postcss-discard-comments": "^4.0.2",
     "postcss-import": "^12.0.1",
     "postcss-mixins": "^6.2.1",
     "postcss-simple-vars": "^5.0.2",
