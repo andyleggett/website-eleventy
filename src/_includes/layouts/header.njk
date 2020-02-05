@@ -1,13 +1,13 @@
 <header>
   <div class="nav">
     <div>
-      <a href="/">home</a>
+      <a {% if page.url == '/' %}class="active"{% endif %} href="/">home</a>
     </div>
     <div>
-      <a href="/about">about</a>
+      <a {% if page.url == '/about/' %}class="active"{% endif %} href="/about">about</a>
     </div>
      <div>
-      <a href="/writing">writing</a>
+      <a {% if page.url == '/writing/' %}class="active"{% endif %} href="/writing">writing</a>
     </div>
   </div>
 

@@ -52,7 +52,7 @@ body {
 h1,
 h2,
 h3 {
-    color: $text-color;
+    color: $header-color;
     font-weight: 600;
     margin-top: 2rem;
     margin-bottom: 0.2rem;
@@ -116,9 +116,14 @@ a:focus {
         border-top-color: mix($text-color, $accent-color, 40%);
         border-bottom-style: none;
         padding: 0.8rem 1rem;
+        margin: 0.8rem;
         text-align: left;
         color: mix($text-color, $accent-color, 80%);
         text-decoration: none;
+    }
+
+    a.active {
+        border-top-width: 3px;
     }
 
     a:hover,
@@ -141,16 +146,23 @@ a:focus {
 
     li {
         list-style-type: none;
+        padding: 0;
 
         a {
             display: inline-block;
-            margin: 1rem 0 0.4rem 0;
+            margin: 1rem 0 0.1rem 0;
             padding: 0;
-            font-size: 1.6rem;
+            font-size: 1rem;
+            color: $header-color;
+
+            @media (min-width: $wide) {
+                font-size: 1.6rem;
+            }
         }
 
         time {
             display: block;
+            font-size: 0.8rem;
         }
     }
 }

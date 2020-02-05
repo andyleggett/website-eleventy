@@ -10,7 +10,7 @@ layout: layouts/base.njk
 
 <p>I love working on interesting projects with interesting people.</p>
 
-<p>Sounds like you? Get in touch.</p>
+<p>Does that sound like you? Get in touch.</p>
 <!-- Icons from Font Awesome under licence https://fontawesome.com/license -->
 <div class="contacts">
   <div>

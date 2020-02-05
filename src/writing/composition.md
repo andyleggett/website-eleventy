@@ -1,6 +1,7 @@
 ---
 tags: post
 title: Function Composition with Ramda
+date: 2015-10-08
 layout: layouts/base.njk
 ---
 

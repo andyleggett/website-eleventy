@@ -4,7 +4,9 @@
   "description": "The website of Andrew Leggett, web application designer and developer",
   "scripts": {
     "start": "npm run dev",
-    "dev": "cross-env ELEVENTY_ENV=dev eleventy --serve",
+    "dev": "cross-env ELEVENTY_ENV=dev npm-run-all --parallel dev-site dev-scripts",
+    "dev-site": "eleventy --serve",
+    "dev-scripts": "rollup -cw",
     "build": "cross-env ELEVENTY_ENV=prod eleventy"
   },
   "repository": {
@@ -14,21 +16,28 @@
   "author": "Andrew Leggett",
   "license": "MIT",
   "dependencies": {
-    "@11ty/eleventy": "^0.8.3",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
-    "autoprefixer": "^9.6.0",
-    "axios": "^0.19.0",
-    "dotenv": "^8.0.0",
+    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "autoprefixer": "^9.7.4",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
     "luxon": "^1.22.0",
-    "postcss": "^7.0.17",
+    "postcss": "^7.0.26",
     "postcss-color-mix": "^1.1.0",
     "postcss-discard-comments": "^4.0.2",
     "postcss-import": "^12.0.1",
-    "postcss-mixins": "^6.2.1",
+    "postcss-mixins": "^6.2.3",
     "postcss-simple-vars": "^5.0.2",
-    "precss": "^4.0.0"
+    "precss": "^4.0.0",
+    "ramda": "^0.27.0"
   },
   "devDependencies": {
-    "cross-env": "5.2.0"
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "cross-env": "7.0.0",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^1.31.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-svelte": "^5.1.1",
+    "svelte": "^3.0.0"
   }
 }
