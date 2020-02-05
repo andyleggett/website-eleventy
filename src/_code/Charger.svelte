@@ -8,4 +8,10 @@
     console.log(text, numbers);
 </script>
 
+<style>
+    div {
+        font-size: 2rem;
+    }
+</style>
+
 <div>{text}</div>

@@ -7,7 +7,9 @@
     "dev": "cross-env ELEVENTY_ENV=dev npm-run-all --parallel dev-site dev-scripts",
     "dev-site": "eleventy --serve",
     "dev-scripts": "rollup -cw",
-    "build": "cross-env ELEVENTY_ENV=prod eleventy"
+    "build": " npm run build-site && npm run build-scripts",
+    "build-site": "cross-env ELEVENTY_ENV=prod eleventy",
+    "build-scripts": "rollup -c"
   },
   "repository": {
     "type": "git",
