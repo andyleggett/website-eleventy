@@ -1,6 +1,5 @@
 ---
-title: writing
-subtitle: Some things of interest
+title: Some Things of Interest
 layout: layouts/base.njk
 ---
 

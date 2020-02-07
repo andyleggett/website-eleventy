@@ -2,6 +2,9 @@
 tags: post
 title: Tasks and Promises
 layout: layouts/base.njk
+date: 2020-01-15
 ---
 
-Blah, blah!
+# A comparison of Tasks and Promises
+
+Some stuff on that

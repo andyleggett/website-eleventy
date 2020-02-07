@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 ::-moz-selection {
@@ -27,7 +28,7 @@ body {
     line-height: 1.8;
     min-height: 100vh;
     background: $page-color;
-    background: url(/images/bg-grid.png), linear-gradient(280deg, $page-color 0%, $accent-color 100%);
+    background: url(/images/bg-grid.png), linear-gradient(60deg, $page-color 0%, $accent-color 100%);
 
     @media (min-width: $narrow) {
         font-size: 18px;
@@ -83,24 +84,17 @@ p {
 
 a:link,
 a:visited {
-    color: $text-color;
+    color: $link-color;
     text-decoration: none;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-bottom-color: mix($text-color, $accent-color, 20%);
+    border-bottom-color: mix($link-color, $accent-color, 20%);
 }
 
 a:hover,
 a:focus {
     color: $text-color;
     border-bottom-color: $text-color;
-}
-
-.nakedLink a:link,
-.nakedLink a:visited,
-.nakedLink a:hover,
-.nakedLink a:focus {
-    border-bottom-style: none;
 }
 
 .nav {
@@ -191,6 +185,23 @@ a:focus {
         height: 32px;
         display: block;
         margin: 1rem auto;
+    }
+}
+
+.about-sections {
+    display: flex;
+    flex-wrap: wrap;
+
+    .about-section {
+        padding: 2rem 2rem 0 2rem;
+
+        h2 {
+            margin-top: 0;
+        }
+
+        @media (min-width: $wide) {
+            flex-basis: 50%;
+        }
     }
 }
 

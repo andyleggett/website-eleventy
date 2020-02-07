@@ -1,7 +1,7 @@
 ---
 tags: post
 title: Rectangle Fit
-date: 2015-08-18
+date: 2016-02-10
 layout: layouts/base.njk
 ---
 

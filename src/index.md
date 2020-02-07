@@ -1,5 +1,5 @@
 ---
-title: Welcome
+title: Welcome to Another Div
 layout: layouts/base.njk
 ---
 
@@ -8,9 +8,6 @@ layout: layouts/base.njk
   a freelance web application designer and developer.
 </h1>
 
-<p>I love working on interesting projects with interesting people.</p>
-
-<p>Does that sound like you? Get in touch.</p>
 <!-- Icons from Font Awesome under licence https://fontawesome.com/license -->
 <div class="contacts">
   <div>
