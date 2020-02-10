@@ -23,14 +23,20 @@
     };
 
     let running = false;
+    let fetching = false;
     let locations;
 
     const run = () => {
         running = true;
+        fetching = true;
 
         fork(
-            error => console.log(error),
+            error => {
+                console.log(error);
+                locations = [];
+            },
             results => {
+                fetching = false;
                 locations = results;
             },
             compose(
@@ -47,13 +53,13 @@
 
 <button on:click={run} class="run-button">Run this part</button>
 {#if running}
-    {#if locations}
-        {#each locations as location}
-            <div class="code-result">{location.Title} - {location.Distance.toFixed(2)}km</div>
-        {/each}
-    {:else}
+    {#if fetching}
         <div class="code-spinner">
             <Spinner />
         </div>
+    {:else}
+        {#each locations as location}
+            <div class="code-result">{location.title} - {location.distance.toFixed(2)}km</div>
+        {/each}
     {/if}
 {/if}

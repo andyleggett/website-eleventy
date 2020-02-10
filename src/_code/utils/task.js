@@ -1,12 +1,12 @@
-const Task = computation => ({
+export const Task = computation => ({
     computation
 });
 
-const of = value => Task((_, resolve) => resolve(value));
+export const of = value => Task((_, resolve) => resolve(value));
 
-const reject = value => Task((reject, _) => reject(value));
+export const reject = value => Task((reject, _) => reject(value));
 
-const map = f => task =>
+export const map = f => task =>
     Task((reject, resolve) =>
         fork(
             a => reject(a),
@@ -15,7 +15,7 @@ const map = f => task =>
         )
     );
 
-const chain = f => task =>
+export const chain = f => task =>
     Task((reject, resolve) =>
         fork(
             a => reject(a),
@@ -24,9 +24,9 @@ const chain = f => task =>
         )
     );
 
-const fork = (reject, resolve, task) => task.computation(reject, resolve);
+export const fork = (reject, resolve, task) => task.computation(reject, resolve);
 
-const sequence = tasks =>
+export const sequence = tasks =>
     Task((reject, resolve) => {
         let results = [];
         let count = 0;
@@ -55,13 +55,3 @@ const sequence = tasks =>
             });
         }
     });
-
-module.exports = {
-    Task,
-    map,
-    chain,
-    of,
-    reject,
-    fork,
-    sequence
-};

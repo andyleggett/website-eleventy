@@ -1,10 +1,11 @@
 <script>
-    import { fork, of } from '../utils/task.js';
+    import { fork, of, chain, map as mapT } from '../utils/task.js';
     import { useGeographic } from 'ol/proj';
+    import { compose } from 'ramda';
     import Spinner from '../components/Spinner.svelte';
 
-    import { getChargerLocations, getLocation } from './chargerfunctions.js';
-    import { createChargerLocationMap } from './mapfunctions.js';
+    import { getChargerRoute, getNearestLocation, getChargerLocations, getLocation } from './chargerfunctions.js';
+    import { createChargerRouteMap } from './mapfunctions.js';
 
     const geoOptions = {
         enableHighAccuracy: true,
@@ -38,11 +39,15 @@
             location => {
                 fork(
                     error => console.log(error),
-                    locations => {
+                    geojson => {
                         fetching = false;
-                        createChargerLocationMap(mapElement, location, locations);
+                        createChargerRouteMap(mapElement, location, geojson);
                     },
-                    getChargerLocations(apiOptions)(of(location))
+                    compose(
+                        chain(getChargerRoute(location)),
+                        mapT(getNearestLocation),
+                        getChargerLocations(apiOptions)
+                    )(of(location))
                 );
             },
             getLocation(geoOptions)

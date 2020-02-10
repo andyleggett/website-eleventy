@@ -24,6 +24,7 @@
     "dotenv": "^8.2.0",
     "luxon": "^1.22.0",
     "ol": "^6.1.1",
+    "osrm-client-js": "^5.5.1",
     "postcss": "^7.0.26",
     "postcss-color-mix": "^1.1.0",
     "postcss-discard-comments": "^4.0.2",
@@ -40,6 +41,7 @@
     "rollup": "^1.31.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-css-only": "^2.0.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-svelte": "^5.1.1",
     "svelte": "^3.0.0"
   }

@@ -87,7 +87,15 @@ The second step is use fetch to hit the Open Charge data endpoint. This step bui
 const buildQueryOption = item => `${item[0]}=${item[1]}`;
 const buildAPIQuery = compose(join('&'), map(buildQueryOption), toPairs);
 
-const getLocationFromAPIData = compose(pick(['Title', 'Distance', 'Latitude', 'Longitude']), prop(['AddressInfo']));
+const getLocationFromAPIData = compose(
+    address => ({
+        title: address.Title,
+        distance: address.Distance,
+        latitude: address.Latitude,
+        longitude: address.Longitude
+    }),
+    prop(['AddressInfo'])
+);
 
 const callChargerAPI = query =>
     Task((rej, res) =>
@@ -120,3 +128,7 @@ There's a lot to unpack here. We have discussed _mapT_ already in the first step
 ## Step 3 - Get them on a map
 
 <div class="code-example" id="charger3"></div>
+
+## Step 4 - Get a route to the nearest charger on a map
+
+<div class="code-example" id="charger4"></div>
